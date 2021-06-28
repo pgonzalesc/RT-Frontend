@@ -15,6 +15,18 @@
     background: #FFF;
 }
 
+.image {
+    width: 35%;
+    background: #ECF0FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image__size {
+    height: 100vh;
+}
+
 .form--header {
     display: flex;
     flex-direction: row;

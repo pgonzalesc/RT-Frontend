@@ -40,7 +40,7 @@ const Login = () => {
         else {
             setError('');
             getPerson();
-            history.push('/Datos');
+            history.push( "/Datos");
         }
     }
 
