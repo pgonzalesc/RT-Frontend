@@ -120,7 +120,7 @@ select{
 }
 
 .form--body--input {
-    margin-top: 12px;
+    margin-top: 0px;
     display: inline-block;
     min-width: 100%;
 }
@@ -131,6 +131,21 @@ input[type=text] {
     border: 1px solid #C5CBE0;
     width: 100% !important;
 }
+
+input[type=number] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #C5CBE0;
+    width: 100% !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
 
 ::placeholder {
     color: #A3ABCC;
@@ -171,4 +186,16 @@ input[type=checkbox] {
     background-color: #EF3340;
     color: #FFF;
     font-size: 16px;
+}
+
+.message {
+    display: flex;
+    width: 100%;
+}
+
+.message--error {
+    color: red;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 10px;
 }
