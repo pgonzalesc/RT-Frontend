@@ -3,11 +3,13 @@ import image from '../../resources/img/pantalla1_web.png';
 import './index.css';
 import { Form } from '../../components/Form';
 import { Image } from '../../components/Image';
+import { useHistory } from "react-router-dom";
 
-export const Login = () => {
+const Login = () => {
     const [error, setError] = useState('');
     const [data, setData] = useState({});
     let msgErr = {};
+    const history = useHistory();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -37,7 +39,16 @@ export const Login = () => {
             setError(msgErr);
         else {
             setError('');
+            getPerson();
+            history.push('/Datos');
         }
+    }
+
+    const getPerson = async()=> {
+        const url = 'https://randomuser.me/api/';
+        const resp = await fetch(url);
+        const {results} = await resp.json();
+        console.log(results);
     }
 
     const handleChange = (e, name) => {
@@ -57,3 +68,5 @@ export const Login = () => {
         </div>
     )
 }
+
+export default Login;

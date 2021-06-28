@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Login} from './screens/Login';
+import Home from './screens/Home';
 
 ReactDOM.render(
-    <Login/>,
+    <Home/>,
   document.getElementById('root')
 );
