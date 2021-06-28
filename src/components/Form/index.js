@@ -1,7 +1,10 @@
 import React from 'react';
+import '../../index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { Error } from '../Alert/Error';
+import { Button } from '../Button';
+import { Select } from '../Select';
 
 export const Form = ({error, handleRegister, handleChange}) => {
     return (
@@ -15,13 +18,7 @@ export const Form = ({error, handleRegister, handleChange}) => {
                     <label className="text_dark">Déjanos tus datos</label>
                 </div>
                 <div className="form--body--input-group">
-                    <div className="form--body--select">
-                        <select id="type_document" name="type_document" className="text__dark" defaultValue="DNI">
-                            <option value="DNI">DNI</option>
-                            <option value="CE">C.E</option>
-                        </select>
-                        <i></i>
-                    </div>
+                    <Select id="type_document" name="type_document" className="text__dark" defaultValue="DNI" arrayValue={["DNI", "CE"]}/>
                     <input type="number" name="document" id="document" placeholder="Nro. de doc" onChange={e=>{handleChange(e, 'document')}} autoComplete="off" required></input>
                 </div>
                 <Error message={error.document}/>
@@ -38,9 +35,7 @@ export const Form = ({error, handleRegister, handleChange}) => {
                     <p className="form--body--check__fontsize text__gray">Acepto la Política de Protecciòn de Datos Personales y los Términos y Condiciones.</p>
                 </div>
                 <Error message={error.check}/>
-                <div className="form--body--button">
-                    <button className="button button__red" onClick={handleRegister}>Cotizalo</button>
-                </div>
+                <Button onClick={handleRegister} text="Cotizalo"/>
             </div>
         </div>
     )
